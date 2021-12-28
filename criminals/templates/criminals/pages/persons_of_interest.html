@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Versadex OTG - Persons of Interest</title>
+
+    {% load static %}
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'criminals/vendors/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'criminals/main.css '%}" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'criminals:index' %}"><strong>Versadex </strong><i>OnTheGo</i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'criminals:index' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Heading Row -->
+        <div class="row header-sm text-center">
+            <div class="col-md-6 header-text-sm">
+                <h1 class="font-weight-light">Persons of Interest</h1>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="spacer"></div>
+
+        <a href="{% url 'criminals:index' %}"><h5><< Go Back</h5></a>
+
+        <div class="spacer"></div>
+
+        <form action="{% url 'criminals:search-result' %}" method="get">
+            <div class="row">
+
+                <div class="col-md-10">
+                <div class="form-group">
+                    <input name="q" type="text" class="form-control" id="search" placeholder="Search by name, date of birth, city or alias">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button style="width:100%;" type="submit" class="btn btn-primary mb-2">Find Now</button>
+            </div>
+            </div>
+
+        </form>
+
+        <div class="spacer"></div>
+
+        <!-- Content Row -->
+        <div class="row text-center" id="contentRow">
+
+
+                {% for person in all_persons %}
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ person.photo }}" class="card-img-top" alt="...">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ person.firstName }}  {{ person.lastName }}</h5>
+                            <p class="card-text">
+                                <strong>Date of Birth: </strong>{{ person.dob }}
+                                <br> <strong>Area of Residence: </strong>{{ person.city }}
+                                <br> <strong>Case #: </strong>{{ person.permit }}
+                            </p>
+                            <a href="{% url 'criminals:detail' person.id %}" class="btn btn-primary">View Person</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+                {% if person.has_other_pages %}
+                    <ul class="pagination">
+                        {% if person.has_previous %}
+                            <li><a href="?page={{ context.previous_page_number }}">&laquo;</a></li>
+                        {% else %}
+                            <li class="disabled"><span>&laquo;</span></li>
+                        {% endif %}
+                        {% for i in person.paginator.page_range %}
+                        {% if context.number == i %}
+                            <li class="active"><span>{{ i }}<span class="sr-only">(current)</span></span></li>
+                        {% else %}
+                            <li><a href="?page={{ i }}">{{ i }}</a></li>
+                        {% endif %}
+                        {% endfor %}
+                        {% if person.has_next %}
+                            <li><a href="?page{{ context.next_page_number }}">&raquo;</a></li>
+                        {% else %}
+                            <li class="disabled"><span>&raquo;</span></li>
+                        {% endif %}
+                    </ul>
+                {% endif %}
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <div class="spacer"></div>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">&copy; Shanice Dick &#183; 00050137 &#183; BSc Internet Technology</p>
+            <p class="m-0 text-center text-white">College of Science Technology and Applied Arts of Trinidad and Tobago</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'criminals/vendors/jquery/jquery.min.js '%}"></script>
+    <script src="{% static 'criminals/vendors/bootstrap/js/bootstrap.bundle.min.js '%}"></script>
+
+</body></html>

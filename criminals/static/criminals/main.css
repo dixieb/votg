@@ -1,0 +1,79 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    padding-top: 40px;
+}
+
+.header {
+    height: 500px;
+    margin-top: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: url('https://backgrounddownload.com/wp-content/uploads/2018/09/header-background-6.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -100;
+}
+
+.header-text {
+    padding-top: 20px;
+    background: #fff;
+    opacity: 0.9;
+    padding-bottom: 20px;
+    margin-left: 20px;
+    height: 250px;
+    margin: 0 auto;
+    top: 20%;
+}
+
+.header-sm {
+	height: 150px;
+    margin-top: 50px;
+    padding-top: 15px;
+    padding-bottom: 50px;
+    background: url('https://backgrounddownload.com/wp-content/uploads/2018/09/header-background-6.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -100;
+}
+
+
+.header-text-sm {
+    padding-top: 15px;
+    background: #fff;
+    opacity: 0.9;
+    padding-bottom: 5px;
+    margin-left: 5px;
+    height: 80px;
+    margin: 0 auto;
+    top: 10%;
+    font-size: 20px;
+}
+
+.card-img-top {
+	width: auto;
+	max-height: 280px;
+}
+
+.latin {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    font-size: 30px;
+    letter-spacing: 0.4em;
+}
+
+.spacer {
+    margin: 30px !important;
+}
+
+/*Scrollable Div*/
+#notes {
+	overflow: auto;
+	height: auto;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Versadex OTG</title>
+
+    {% load static %}
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'criminals/vendors/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+   <!-- Custom CSS -->
+    <link href="{% static 'criminals/main.css '%}" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'criminals:index' %}"><strong>Versadex </strong><i>OnTheGo</i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'criminals:index' %}">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Heading Row -->
+        <div class="row header text-center">
+            <div class="col-md-6 header-text">
+
+                <h1 class="font-weight-light">Welcome to Versadex OTG</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus ipsum vitae feugiat rhoncus. Ut tempor, arcu ac laoreet lobortis, lectus ante dapibus ex.</p>
+                <a class="btn btn-primary" href="#quick-links">Let's Go!</a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Call to Action Well -->
+        <div class="card text-white bg-secondary my-5 py-4 text-center">
+            <div class="card-body latin">
+                <p class="text-white m-0">Servire decus tueri</p>
+            </div>
+        </div>
+
+        <!-- Content Row -->
+        <div class="row" id="quick-links">
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Persons of Interest</h2>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'criminals:persons_of_interest' %}" class="btn btn-primary btn-sm">View All</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-4 -->
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Reports</h2>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary btn-sm">New Report</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-md-4 -->
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Emergency</h2>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-danger btn-sm">Request Backup</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">&copy; Shanice Dick &#183; 00050137 &#183; BSc Internet Technology</p>
+            <p class="m-0 text-center text-white">College of Science Technology and Applied Arts of Trinidad and Tobago</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+
+     <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'criminals/vendors/jquery/jquery.min.js '%}"></script>
+    <script src="{% static 'criminals/vendors/bootstrap/js/bootstrap.bundle.min.js '%}"></script>
+
+</body></html>

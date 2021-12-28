@@ -1,0 +1,33 @@
+{% extends 'criminals/base.html' %}
+
+<!-- Title -->
+{% block title %} - Ticket Created {% endblock %}
+
+<!-- Text in Jumbotron -->
+{% block jumbotron-txt %}
+    Ticket #001
+{% endblock %}
+
+<!-- Section 1 Styling -->
+{% block style1 %}
+    display: none;
+{% endblock %}
+
+<!-- Section 2 Content -->
+{% block content %}
+
+    <div class="row">
+        <h3>Notice of Opportunity to Pay Fixed Penalty</h3>
+        <div class="col-lg-12">
+            <p>
+                Take notice that I have reason to believe that you have committed an offence
+                <br> the particulars of which are listed hereunder:
+
+            </p>
+
+        </div>
+    </div>
+
+<div class="spacer"></div>
+
+{% endblock %}
